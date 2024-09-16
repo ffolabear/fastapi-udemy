@@ -4,8 +4,8 @@ app = FastAPI()
 
 # 실행 : uvicorn books:app --reload
 # --reload 옵션 줄시 코드 변화가 있을때 마다 자동 리로드
-# 혹은 fastapi run books.py
-# fastapi run dev books.py 로 실행시 개발모드
+# 혹은 fastapi run books2.py
+# fastapi run dev books2.py 로 실행시 개발모드
 
 BOOKS = [
     {'title': 'Title One', 'author': 'Author One', 'category': 'science'},
