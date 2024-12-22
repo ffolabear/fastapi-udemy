@@ -35,14 +35,14 @@ db_dependency = Annotated[Session, Depends(get_db)]
 
 
 @router.post("/auth", status_code=status.HTTP_201_CREATED)
-async def create_user(db: db_dependency, create_user_model: CreateUserRequest):
+async def create_user(db: db_dependency, create_user_request: CreateUserRequest):
     create_user_model = Users(
-        email=create_user_model.email,
-        username=create_user_model.username,
-        first_name=create_user_model.first_name,
-        last_name=create_user_model.last_name,
-        role=create_user_model.role,
-        hashed_password=bcrypt_context.hash(create_user_model.password),
+        email=create_user_request.email,
+        username=create_user_request.username,
+        first_name=create_user_request.first_name,
+        last_name=create_user_request.last_name,
+        role=create_user_request.role,
+        hashed_password=bcrypt_context.hash(create_user_request.password),
         is_active=True
     )
 
