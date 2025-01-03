@@ -8,7 +8,7 @@ from starlette import status
 import models
 from database import SessionLocal
 from models import Todos
-from .auth import get_current_user
+from routers.auth import get_current_user
 
 router = APIRouter()
 
